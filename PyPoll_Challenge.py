@@ -6,7 +6,7 @@ file_to_load = os.path.join('Resources',"election_results.csv")
 # Create a filename variable to a direct or indirect path to the file.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
-# 1. Initialize a total vote counter.
+# Initialize a total vote counter.
 total_votes = 0
 
 # Candidate Options
@@ -21,7 +21,7 @@ county_list = []
 # Declare empty dictionary for county and votes.
 county_votes = {}
 
-# Winning county
+# Largest county turnout
 winning_county = ""
 winning_county_count = 0
 
@@ -75,7 +75,7 @@ with open(file_to_load,newline="") as election_data:
 
 # Save the results to our text file.
 with open(file_to_save,'w') as txt_file:
-# Print the final vote count to the terminal.
+    # Print the final vote count to the terminal.
     election_results = (
         f"\nElection Results\n"
         f"-------------------------\n"
@@ -138,7 +138,7 @@ with open(file_to_save,'w') as txt_file:
         candidate_results = (f"{candidate}: {vote_percentage:.1f}% ({votes:,})\n")
         # Print each candidate, their voter count, and percentage to the terminal.
         print(candidate_results)
-        #  Save the candidate results to our text file.
+        # Save the candidate results to our text file.
         txt_file.write(candidate_results)
                         
         # Determine winning vote count and candidate
